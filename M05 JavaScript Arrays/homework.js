@@ -171,19 +171,35 @@ function mesesDelAño(array) {
    //si el elemento es igual a enero, marzo o noviembre pushearlo al array vacio
    //si el array vacio tiene menos de 3 elementos retornar "no se encontraron los meses pedidos"
    //si el array vacio tiene 3 elementos  retornar el array
-
+let meses =[];
+let aux = ['Enero','Marzo','Noviembre'];
+   array.forEach(element =>{
+      if(aux.includes(element)){
+         meses.push(element);
+      }
+   });
+   if(meses.length === 3){
+      return meses;
+   } else
+   return "No se encontraron los meses pedidos"
 }
 
 function tablaDelSeis() {
    // Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
+   let resultado=[]
+   for(let i = 0; i <= 10; i++){
+      resultado.push(i * 6);
+   } 
+   return resultado
 }
 
 function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
+   return array.filter(element => element > 100);
 }
 
 /* ----------------------------------------------------------------------------------
@@ -197,6 +213,20 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
+   let aux = [];
+   let aux2 = false;
+   for(let i = 0; i < 10; i++){
+      num += 2;
+      aux.push(num);
+      if(num === i){
+         aux2 =+ true;
+         break;
+      }
+   }
+if(aux2){
+   return "Se interrumpió la ejecución"
+}
+return aux;
 }
 
 function continueStatement(num) {
@@ -206,6 +236,15 @@ function continueStatement(num) {
    // se continua con la siguiente iteración.
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
+   let aux = [];
+   for(let i = 0; i < 10; i++){
+      if(i === 5){
+         continue;
+      }
+      num += 2;
+      aux.push(num);
+   }
+   return aux;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
